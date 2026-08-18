@@ -1,4 +1,4 @@
-import test from "@playwright/test";
+import test, { expect } from "@playwright/test";
 test.only("date pickers", async ({ page }) => {
     await page.goto("https://selenium.qabible.in/")
     const selectdatepickermenu = page.getByRole("link", { name: "Date Pickers" })
@@ -33,6 +33,11 @@ test.only("date pickers", async ({ page }) => {
     await page.locator(".datepicker-years .year",{hasText:target_year.toString()}).click()
     await page.locator(".month").nth(target_month-1).click()
     await page.locator(".datepicker-days .day",{hasText:target_date.toString()}).click()
+    await page.locator(".btn.btn-primary").first().click()
+    const showdate=await page.locator("#message-one").first()
+    const actualmsg=await showdate.textContent()
+    console.log(actualmsg)
+    expect(actualmsg).toContain("Date : 25/01/2035")
     await page.pause()
 })
 
