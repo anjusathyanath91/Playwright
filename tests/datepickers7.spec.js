@@ -1,5 +1,5 @@
 import test, { expect } from "@playwright/test";
-test.only("date pickers", async ({ page }) => {
+test("date pickers", async ({ page }) => {
     await page.goto("https://selenium.qabible.in/")
     const selectdatepickermenu = page.getByRole("link", { name: "Date Pickers" })
     await selectdatepickermenu.click()

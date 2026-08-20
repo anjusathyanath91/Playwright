@@ -16,7 +16,7 @@ test("modals",async({page})=>{
     await page.pause()
 })
 
-test("Multiple modals",async({page})=>{
+test.only("Multiple modals",async({page})=>{
     await page.goto("https://selenium.qabible.in/")
     const selectalertnmodals2=page.getByRole("link",{name:"Alerts and Modals"})
     await selectalertnmodals2.click()
@@ -30,8 +30,7 @@ test("Multiple modals",async({page})=>{
     await launchanothermodalbtn.click()
     const childmodalwindow=page.locator(".modal-content").nth(2)
     await childmodalwindow.click()
-       
-    const savechangebtn2=childmodalwindow.getByText("Save changes").nth(2)
+    const savechangebtn2=childmodalwindow.getByText("Save changes")
     await savechangebtn2.click() 
     await page.pause()
 

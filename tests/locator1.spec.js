@@ -33,3 +33,16 @@ await page.pause()
 
 })
 
+//checkbox for double click
+test.only("checkbox double click",async({page})=>{
+await page.goto("https://selenium.qabible.in/")
+await page.locator(".nav-link").nth(1).click() 
+await page.locator("//a[@href='check-box-demo.php']").click()
+const checkbox=await page.locator(".form-check-label").first()
+//await checkbox.dblclick() //for double click a checkbox
+//await checkbox.click({clickCount:3}) //for triple click a checkbox
+await checkbox.click({button:"right"}) //for right click an element
+
+await page.waitForTimeout(3000)
+
+})
