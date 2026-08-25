@@ -34,7 +34,7 @@ await page.pause()
 })
 
 //checkbox for double click
-test.only("checkbox double click",async({page})=>{
+test("checkbox double click",async({page})=>{
 await page.goto("https://selenium.qabible.in/")
 await page.locator(".nav-link").nth(1).click() 
 await page.locator("//a[@href='check-box-demo.php']").click()
