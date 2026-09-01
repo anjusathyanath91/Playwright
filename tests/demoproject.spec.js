@@ -1,4 +1,4 @@
-import test from "@playwright/test"
+import test, { expect } from "@playwright/test"
 
 test.only("Demo project", async ({ page }) => {
     await page.goto("https://www.saucedemo.com/")
@@ -14,10 +14,34 @@ test.only("Demo project", async ({ page }) => {
     const buy_product = 'Sauce Labs Backpack'
     for (let i = 0; i < count; i++) {
         if (await page.locator(".inventory_item_description").nth(i).locator(".inventory_item_name").textContent() == buy_product) {
-
+            console.log(await page.locator(".inventory_item_description").nth(i).locator(".inventory_item_name").textContent())
+            const addtocartbutton=page.locator(".inventory_item_description").nth(i).locator(".btn.btn_primary.btn_small.btn_inventory")
+            await addtocartbutton.click()
         }
 
     }
+    const shopping_cart_icon=page.locator(".shopping_cart_link")
+    await shopping_cart_icon.click()
+    const item_in_cart=page.locator(".inventory_item_name")
+    const item_name_in_cart=await item_in_cart.textContent()
+    expect(item_name_in_cart).toBe(buy_product)
+    const checkout_button= page.locator(".btn.btn_action.btn_medium.checkout_button")
+    await checkout_button.click()
+    const firstname=page.getByPlaceholder("First Name")
+    await firstname.fill("Anju")
+    const last_name=page.getByPlaceholder("Last Name")
+    await last_name.fill("S")
+    const zipcode=page.getByPlaceholder("Zip/Postal Code")
+    await zipcode.fill("679575")
+    const continue_button=page.locator("#continue")
+    await continue_button.click()
+    const finishbutton=page.locator("#finish")
+    await finishbutton.click()
+    await expect(page).toHaveURL("https://www.saucedemo.com/checkout-complete.html")
+    const thanks_msg=await page.locator(".complete-header")
+    const actual_msg=await thanks_msg.textContent()
+    console.log(actual_msg)
+    expect(actual_msg).toContain("Thank you for your order!")
     await page.waitForTimeout(3000)
 
 })
