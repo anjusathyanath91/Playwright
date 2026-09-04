@@ -1,0 +1,31 @@
+[{
+    "username": "standard_user",
+    "password": "secret_sauce",
+    "invalidusername": "abc",
+    "invalidpassword": "12345",
+    "productname": "Sauce Labs Backpack",
+    "firstname": "Anju",
+    "lastname": "S",
+    "zip": "142562"
+},
+{
+    "username": "standard_user",
+    "password": "secret_sauce",
+    "invalidusername": "abc123",
+    "invalidpassword": "1234500",
+    "productname": "Sauce Labs Bike Light",
+    "firstname": "XYZ",
+    "lastname": "SP",
+    "zip": "000000"
+},
+{
+    "username": "standard_user",
+    "password": "secret_sauce",
+    "invalidusername": "xcd1232",
+    "invalidpassword": "5874500",
+    "productname": "Sauce Labs Bolt T-Shirt",
+    "firstname": "PQR",
+    "lastname": "OPQ",
+    "zip": "111111"
+}
+]

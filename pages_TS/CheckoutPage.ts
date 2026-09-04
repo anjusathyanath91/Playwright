@@ -1,7 +1,14 @@
-import { expect } from "@playwright/test"
+import { expect, Locator, Page } from "@playwright/test"
 
 export class CheckoutPage {
-    constructor(page) {
+    page:Page
+    firstname:Locator
+    last_name:Locator
+    zipcode:Locator
+    continue_button:Locator
+    finishbutton:Locator
+    thanks_msg:Locator
+    constructor(page:Page) {
         this.page = page
         this.firstname = page.getByPlaceholder("First Name")
         this.last_name = page.getByPlaceholder("Last Name")
@@ -11,7 +18,7 @@ export class CheckoutPage {
         this.thanks_msg = page.locator(".complete-header")
 
     }
-    async customerdetails(fname,lname,zip) {
+    async customerdetails(fname:string,lname:string,zip:string) {
         await this.firstname.fill(fname)
         await this.last_name.fill(lname)
         await this.zipcode.fill(zip)
