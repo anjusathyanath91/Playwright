@@ -3,7 +3,14 @@
   "version": "1.0.0",
   "description": "Playwright programs",
   "main": "index.js",
-  "scripts": {},
+  
+ "scripts": {
+    "test":"npx playwright test",
+    "headed":"npx playwright test --headed",
+    "uimode":"npx playwright test --ui",
+    "debug":"npx playwright test --debug",
+    "config":"npx playwright test --config=playwright.config1.js"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/anjusathyanath91/Playwright.git"
