@@ -15,49 +15,59 @@ import { chromium, defineConfig, devices } from '@playwright/test';
 export default defineConfig({
   testDir: './tests',
   /* Run tests in files in parallel */
-  
+
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
   reporter: 'html',
-  timeout:50*1000,        //to control the entire project timeout 
-  expect:{                //expect is only for assertion timeout
-    timeout:60*1000,
+  timeout: 50 * 1000,        //to control the entire project timeout 
+  expect: {                //expect is only for assertion timeout
+    timeout: 60 * 1000,
   },
-  
-  workers:3,
- // retries:2,
-   
+
+  workers: 3,
+  // retries:2,
+
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
- fullyParallel:true,
- projects:[{
-  name:"chrome_project",
-   use: {
-    browserName:'chromium',
-    viewport:{
-      height:500,
-      width:500
+  fullyParallel: true,
+  projects: [{
+    name: "chrome_project",
+    use: {
+      browserName: 'chromium',
+      viewport: {
+        height: 500,
+        width: 500
+      },
+      headless: false,
+       permissions: ['notifications', 'camera', 'geolocation', 'microphone']
+
+
     },
-    headless:false
-    
-   
   },
-},
-{
-  name:"firefox_project",
-   use: {
-    browserName:'firefox',
-    headless:false,
-    ...devices['Galaxy S24']
-   
+  {
+    name: "firefox_project",
+    use: {
+      browserName: 'firefox',
+      headless: false,
+      ...devices['Galaxy S24'],
+      screenshot: 'only-on-failure',
+      video: 'retain-on-failure',
+      trace: 'retain-on-failure',
+      permissions:['geolocation'],
+      /*geolocation:{
+       latitude:9.9,
+       longitude:1.6,
+       }*/
+      ignoreHTTPSErrors: true
+    },
+
   },
-},
-{
-  name:"webkit_project",
-   use: {
-    browserName:'webkit',
-    headless:false,
-  
-  },
-}]
+  {
+    name: "webkit_project",
+    use: {
+      browserName: 'webkit',
+      headless: false,
+     
+    },
+  }]
   /* Configure projects for major browsers */
 
   /* Run your local dev server before starting the tests */
