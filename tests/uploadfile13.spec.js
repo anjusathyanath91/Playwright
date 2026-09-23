@@ -1,5 +1,5 @@
 import test from "@playwright/test"
-test("Single File upload",async({page})=>{
+test("@web Single File upload",async({page})=>{
 await page.goto("https://demoqa.com/upload-download")
 const choosefile=page.locator("#uploadFile")
 await choosefile.setInputFiles("E:/cloneplaywright/utils/excelforplaywright.xlsx") //to use setInputFiles the locator type should be "file"
@@ -15,8 +15,3 @@ await page.getByRole("button",{name:"Upload Multiple Files"}).click()
 await page.waitForTimeout(3000)
 })
 
-test.only("File download",async({page})=>{
-await page.goto("https://demoqa.com/upload-download")
-const choosefile=page.locator(".btn btn-primary")
-
-})

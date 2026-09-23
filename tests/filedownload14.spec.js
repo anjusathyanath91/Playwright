@@ -1,5 +1,5 @@
 import test from "@playwright/test"
-test("File download",async({page})=>{
+test("@web File download",async({page})=>{
 await page.goto("https://demoqa.com/upload-download")
 const download_promise=page.waitForEvent('download')
 const downloadbutton=page.locator(".btn.btn-primary")

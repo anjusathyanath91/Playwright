@@ -1,5 +1,7 @@
 import test, { expect } from "@playwright/test"
 import { customtest } from "../utils/customlogindata"
+import { mytest } from "../utils/SampleCustom"
+import {logintest} from "../utils/testlogin"
 test.skip("Demo project", async ({ page }) => {
     await page.goto("https://www.saucedemo.com/")
     const username = page.getByPlaceholder("Username")
@@ -45,16 +47,31 @@ test.skip("Demo project", async ({ page }) => {
     await page.waitForTimeout(3000)
 
 })
-const users = [logindata,logindata2]
-for (let user of users) {
-    customtest("custom test"+user, async ({page,logindata}) => {
-        console.log(user)
-        //const currentuser = user[i]
+
+/*customtest.skip("custom test" + user, async ({ page, logindata }) => {
+    console.log(user)
+    //const currentuser = user[i]
+    await page.goto("https://www.saucedemo.com/")
+    const username = page.getByPlaceholder("Username")
+    await username.fill(logindata.username)
+    const Password = page.getByPlaceholder("Password")
+    await Password.fill(logindata.password)
+    await page.locator(".submit-button.btn_action").click()
+})*/
+
+/*
+mytest("Sample Custom Mytest", async ({ page, userlist }) => {
+    for (const user of userlist) {
         await page.goto("https://www.saucedemo.com/")
-        const username = page.getByPlaceholder("Username")
-        await username.fill(user.username)
-        const Password = page.getByPlaceholder("Password")
-        await Password.fill(user.password)
-        await page.locator(".submit-button.btn_action").click()
-    })
-}
+        const userid = await page.getByPlaceholder("Username")
+        await userid.fill(user.validusername)
+        const password = await page.getByPlaceholder("Password")
+        await password.fill(user.validpassword)
+        await page.locator("#login-button").click()
+    }
+
+})*/
+
+logintest("Locator Custom Test",async ({page,loginfixture})=>{
+    await loginfixture("standard_user","secret_sauce")
+})
