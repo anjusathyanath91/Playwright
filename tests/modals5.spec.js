@@ -16,7 +16,7 @@ test("modals",async({page})=>{
     await page.pause()
 })
 
-test.only("Multiple modals",async({page})=>{
+test("Multiple modals",async({page})=>{
     await page.goto("https://selenium.qabible.in/")
     const selectalertnmodals2=page.getByRole("link",{name:"Alerts and Modals"})
     await selectalertnmodals2.click()

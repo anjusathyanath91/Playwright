@@ -3,7 +3,7 @@ import { PageManager } from "../pages_TS/PageManager"
 import testdata from "../utils/testdata.json" with{type:"json"} //import json file
 //const testdataobj=JSON.parse(JSON.stringify(testdata)) //convert json file to normal string using stringyfy method and then using parse method string to javascript object
 for(const testdataobj of testdata){
-test.only("Demo project"+testdataobj.productname, async ({ page }) => {
+test("Demo project"+testdataobj.productname, async ({ page }) => {
     let pagemanager=new PageManager(page) 
     const loginpage=pagemanager.getloginpage() //get object from pagemanager 
     const productpage=pagemanager.getroductpage()

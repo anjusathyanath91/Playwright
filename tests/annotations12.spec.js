@@ -1,7 +1,7 @@
 import test from "@playwright/test"
-test.fail("First test",async({page})=>{
-    console.log("Calling first testcase")
-})
+//test.fail("First test",async({page})=>{
+    //console.log("Calling first testcase")
+//})
 test.skip("Second test",async({page})=>{
     console.log("Calling second testcase")
 })
