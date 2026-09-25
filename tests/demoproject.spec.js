@@ -44,7 +44,7 @@ test.skip("Demo project", async ({ page }) => {
     const actual_msg = await thanks_msg.textContent()
     console.log(actual_msg)
     expect(actual_msg).toContain("Thank you for your order!")
-    await page.waitForTimeout(3000)
+   await page.waitForTimeout(3000)
 
 })
 

@@ -17,7 +17,7 @@ test("Dropdown",async({page})=>{
     console.log(message)
     expect(message).toContain(color)//assertion
     //expect(message).toContain("Selected Color : "+color) 
-    await page.pause()
+    //await page.pause()
 
   
 

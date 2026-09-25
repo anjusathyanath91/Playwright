@@ -26,6 +26,6 @@ test("Form",async({page})=>{
     await expect(visibleText).toBeTruthy()
     await expect(successmsg).toBeVisible()//instead of 26th we can use tobevsible assertion directly with the locator variable 
     //await expect(successmsg).not.toBeVisible() //negative case for tobevisible()
-    await page.pause()
+    //await page.pause()
 
 })

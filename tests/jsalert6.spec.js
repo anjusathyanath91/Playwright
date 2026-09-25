@@ -18,6 +18,6 @@ test("JavaScript Alert", async ({ page }) => {
     console.log(msgforaction)
     //expect(msgforaction).toContain("Cancel!") -it will pass only if we uncomment await dialog.dismiss()
     expect(msgforaction).toContain("OK!")
-    await page.pause()
+   // await page.pause()
 
 })

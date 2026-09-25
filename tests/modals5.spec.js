@@ -13,7 +13,7 @@ test("modals",async({page})=>{
     await savechangebtn.click() 
     const closebtn=modalsavewindow.locator(".btn.btn-secondary").first()
     await closebtn.click()
-    await page.pause()
+    //await page.pause()
 })
 
 test("Multiple modals",async({page})=>{
@@ -32,7 +32,7 @@ test("Multiple modals",async({page})=>{
     await childmodalwindow.click()
     const savechangebtn2=childmodalwindow.getByText("Save changes")
     await savechangebtn2.click() 
-    await page.pause()
+    //await page.pause()
 
 
 })

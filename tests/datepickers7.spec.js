@@ -38,7 +38,7 @@ test("date pickers", async ({ page }) => {
     const actualmsg=await showdate.textContent()
     console.log(actualmsg)
     expect(actualmsg).toContain("Date : 25/01/2035")
-    await page.pause()
+   // await page.pause()
 })
 
 

@@ -29,7 +29,7 @@ const isCheck2=await checkbox.isChecked()
 console.log(isCheck2)
 await expect(isCheck2).toBeFalsy()
 await expect(checkbox).not.toBeChecked()
-await page.pause()
+//await page.pause()
 
 })
 
