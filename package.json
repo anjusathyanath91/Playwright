@@ -9,7 +9,7 @@
     "uimode": "npx playwright test --ui",
     "debug": "npx playwright test --debug",
     "config": "npx playwright test --config=playwright.config1.js",
-    "web":"npx playwright test --grep @web"
+    "web": "npx playwright test --grep @web"
   },
   "repository": {
     "type": "git",
@@ -18,12 +18,13 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "type": "commonjs",
+  "type": "module",
   "bugs": {
     "url": "https://github.com/anjusathyanath91/Playwright/issues"
   },
   "homepage": "https://github.com/anjusathyanath91/Playwright#readme",
   "devDependencies": {
+    "@cucumber/cucumber": "^13.2.1",
     "@playwright/test": "^1.62.1",
     "@types/node": "^26.2.0"
   },
