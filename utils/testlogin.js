@@ -1,6 +1,6 @@
 import test from "@playwright/test";
 
-exports.logintest=test.extend({
+export const logintest=test.extend({
     loginfixture:async({page},use)=>{
         const login = async(username,pwd)=>{
         await page.goto("https://www.saucedemo.com/")

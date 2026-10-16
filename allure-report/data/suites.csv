@@ -1,0 +1,3 @@
+"DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
+"","10091","JavaScript Alert","","2026-10-15","passed","2026-10-15","","jsalert6.spec.js","",""
+"","5384","Form","","2026-10-15","passed","2026-10-15","","form4.spec.js","",""

@@ -17,3 +17,4 @@ expect(response_json).toHaveProperty('userId',1)//to check whether property with
 expect(response_json).toHaveProperty('title','sunt aut facere repellat provident occaecati excepturi optio reprehenderit')
 expect(response_json.body).toContain('suscipit')//to check a value inside a property
 })
+

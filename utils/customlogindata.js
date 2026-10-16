@@ -1,5 +1,5 @@
 import test from "@playwright/test"
-exports.customtest = test.extend({
+export const customtest = test.extend({
     logindata: { //logindata fixture
         username: "standard_user",
         password: "secret_sauce",

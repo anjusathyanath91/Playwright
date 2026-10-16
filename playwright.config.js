@@ -17,7 +17,10 @@ export default defineConfig({
   /* Run tests in files in parallel */
   
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
-  reporter: 'html',
+ reporter: 'html',
+ /*reporter:[
+  ["line"],["allure-playwright"]
+ ],*/
   timeout:50*1000,        //to control the entire project timeout 
   expect:{                //expect is only for assertion timeout
     timeout:60*1000,

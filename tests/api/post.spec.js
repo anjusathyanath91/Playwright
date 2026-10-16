@@ -10,3 +10,5 @@ console.log(await response.json())//to print token
 const response_json=await response.json()
 expect(response_json.token).not.toBeNull()
 })
+
+//https://restful-booker.herokuapp.com/apidoc/index.html?utm_source=chatgpt.com
